@@ -1,4 +1,4 @@
-package com.mkr.app.ecomm;
+package com.mkr.app.ecomm.model;
 
 public enum UserRole {
 
