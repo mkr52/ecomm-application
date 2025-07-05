@@ -10,3 +10,31 @@ spring:
       enabled: true
   datasource:
     url: jdbc:h2:mem:test
+
+# Actuator configuration
+# Official docs: https://docs.spring.io/spring-boot/reference/actuator/index.html
+#                https://docs.spring.io/spring-boot/docs/2.0.x/actuator-api/html/
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*' # expose all endpoints
+        # exclude beans
+        exclude: ['beans']
+  endpoint:
+    health:
+      show-details: always # show detailed health information
+    shutdown:
+      access: read_only # allow shutdown endpoint to be accessed in read-only mode
+  info:
+    env:
+      enabled: true
+
+info:
+  app:
+    name: ecomm app
+    description: Ecommerce application
+    version: 1.0.0
+
+server:
+  shutdown: graceful
